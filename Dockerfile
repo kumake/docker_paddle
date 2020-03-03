@@ -12,7 +12,8 @@ ENV LANG C.UTF-8
 WORKDIR /root
 
 RUN apt-get update \
-        && apt-get install -y vim lrzsz curl\
+        && apt-get install -y vim lrzsz curl net-tools \
+        && pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyter \
                 # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
                 && apt-get clean \
                 && apt-get autoclean \
