@@ -1,4 +1,4 @@
-FROM hub.baidubce.com/paddlepaddle/paddle:1.7.0
+FROM hub.baidubce.com/paddlepaddle/paddle:1.7.1
 
 #MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
@@ -13,7 +13,7 @@ WORKDIR /root
 
 RUN apt-get update \
         && apt-get install -y vim lrzsz curl net-tools inetutils-ping \
-        && pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyter \
+        && pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyter jupyterlab\
                 # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
                 && apt-get clean \
                 && apt-get autoclean \
