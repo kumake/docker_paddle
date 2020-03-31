@@ -17,7 +17,7 @@ RUN apt-get install  -y  software-properties-common \
         && apt-get install -y python3.7 vim lrzsz curl net-tools inetutils-ping \
         && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1 \
         && update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.7 2 \
-        && pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyter jupyterlab \
+        #&& pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyter jupyterlab \
                 # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
                 && apt-get clean \
                 && apt-get autoclean \
