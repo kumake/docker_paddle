@@ -11,7 +11,7 @@ ENV LANG C.UTF-8
 
 WORKDIR /root
 
-RUN apt-get install software-properties-common \
+RUN apt-get install  -y  software-properties-common \
         && add-apt-repository ppa:deadsnakes/ppa -y \
         && apt-get update \
         && apt-get install -y python3.7 vim lrzsz curl net-tools inetutils-ping \
