@@ -33,4 +33,7 @@ RUN apt-get update \
                 && apt-get autoclean \
                 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+#拷贝jupyter配置文件
+COPY ./jupyter_notebook_config.py  /root/.jupyter/jupyter_notebook_config.py
+
 CMD ["/bin/bash"]
