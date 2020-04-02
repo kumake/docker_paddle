@@ -12,7 +12,7 @@ ENV LANG C.UTF-8
 WORKDIR /root
 
 RUN apt-get update \
-        && apt-get install -y  vim lrzsz curl net-tools inetutils-ping \
+        && apt-get install -y  vim lrzsz curl net-tools inetutils-ping zip \
         #设置python3 pip3默认为3.7版本
         && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1 \
         && update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.6 2 \
@@ -30,6 +30,8 @@ RUN apt-get update \
         && pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyterlab \
         #安装pyecharts v1.0版本仅支持python3.6以上
         && pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pyecharts \
+        #图像增广库
+        && pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple imgaug \
                 # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
                 && apt-get clean \
                 && apt-get autoclean \
